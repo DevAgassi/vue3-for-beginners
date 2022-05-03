@@ -1,0 +1,8 @@
+import { Post } from "@/model/posts";
+
+export type State = {
+  isLoading: boolean;
+  hasError: boolean;
+  errorMessage: string;
+  posts: any | null;
+};

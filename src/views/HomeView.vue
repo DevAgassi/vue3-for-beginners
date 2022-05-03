@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="container mx-auto">
+    <Counter />
+    <TodoList />
+    <CounterIncrementButton />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import Counter from "@/components/counter";
+import CounterIncrementButton from "@/components/counter-increment-button";
+import TodoList from "@/components/todo-list";
 
 export default defineComponent({
   name: "HomeView",
   components: {
-    HelloWorld,
+    TodoList,
+    CounterIncrementButton,
+    Counter,
   },
 });
 </script>

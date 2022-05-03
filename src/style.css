@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.transition-1000 {
+    transition: color 1000ms ease-in-out;
+}
+
+.app__header {
+    @apply bg-gray-100 dark:bg-black dark:text-white transition-colors ease-in-out duration-1000;
+}
+
+.nav__link {
+    @apply text-gray-800 dark:text-white transition-1000 text-sm font-semibold hover:text-purple-600 mr-4;
+}
+
+.app__main {
+    @apply bg-white dark:bg-black dark:text-white transition-colors ease-in-out duration-1000;
+    min-height: calc(100vh - 72px);
+}
+
+.dark .dark\:fill-white {
+    fill: white;
+}
+
