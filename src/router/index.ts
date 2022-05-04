@@ -14,29 +14,59 @@ const routes: Array<RouteRecordRaw> = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import(/* webpackChunkName: "about" */ "@/views/AboutView.vue"),
   },
   {
     path: "/user",
     name: "user",
-    component: () => import("../views/UserView.vue"),
+    component: () =>
+      import(/* webpackChunkName: "user" */ "@/views/UserView.vue"),
   },
   {
     path: "/toggle",
     name: "toggle",
-    component: () => import("../views/ToggleItemsView.vue"),
+    component: () =>
+      import(
+        /* webpackChunkName: "toggleItems" */ "@/views/ToggleItemsView.vue"
+      ),
   },
   {
     path: "/blog",
     name: "blog",
-    component: () => import("../views/AppBlogView.vue"),
+    component: () =>
+      import(/* webpackChunkName: "blog" */ "@/views/AppBlogView.vue"),
     children: [
       {
         name: "post",
         path: "/:id",
-        component: () => import("../views/AppPostView.vue"),
+        component: () =>
+          import(/* webpackChunkName: "post" */ "@/views/AppPostView.vue"),
       },
     ],
+  },
+  {
+    path: "/tutorials",
+    name: "tutorials",
+    component: () =>
+      import(
+        /* webpackChunkName: "tutorialsList" */ "@/views/TutorialsListView.vue"
+      ),
+  },
+  {
+    path: "/tutorials/:id",
+    name: "tutorial-details",
+    component: () =>
+      import(
+        /* webpackChunkName: "tutorialDetails" */ "@/views/TutorialDetailsView.vue"
+      ),
+  },
+  {
+    path: "/tutorials/add",
+    name: "add-tutorial",
+    component: () =>
+      import(
+        /* webpackChunkName: "addTutorial" */ "@/views/AddTutorialView.vue"
+      ),
   },
 ];
 

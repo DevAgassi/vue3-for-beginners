@@ -1,4 +1,4 @@
-import { computed, reactive, ref, Ref } from "vue";
+import { computed, reactive, ref } from "vue";
 import axios from "axios";
 
 export const useFetch = async (url: string, config: object = {}) => {

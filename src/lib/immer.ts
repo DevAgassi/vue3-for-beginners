@@ -1,6 +1,6 @@
 import { produce, Draft } from "immer";
 import { shallowRef } from "vue";
-import { BaseState } from "@/types";
+import { BaseState } from "@/types/BaseState";
 
 export function useImmer(baseState: BaseState[]) {
   const state = shallowRef(baseState);

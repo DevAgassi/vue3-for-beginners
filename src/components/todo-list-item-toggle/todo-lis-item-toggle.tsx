@@ -1,7 +1,7 @@
 import { useImmer } from "@/lib/immer";
 import { Draft } from "immer";
 import { defineComponent } from "vue";
-import { BaseState } from "@/types";
+import { BaseState } from "@/types/BaseState";
 
 import "./todo-list-item.toggle.scss";
 

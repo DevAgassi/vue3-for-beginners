@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.submit-form {
+    max-width: 300px;
+    margin: auto;
+}
+
+.list {
+    text-align: left;
+    max-width: 750px;
+    margin: auto;
+}
+
+.edit-form {
+    max-width: 300px;
+    margin: auto;
+}
+
 .transition-1000 {
     transition: color 1000ms ease-in-out;
 }

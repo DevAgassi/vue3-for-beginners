@@ -1,16 +1,25 @@
-<script setup lang="ts">
-import ConfigProvider from "@/components/config-provider";
+<script lang="ts">
+import ConfigProvider from "@/components/config-provider/config-provider";
 import DisplayModeControl from "@/components/display-mode-control";
 import "@/style.css";
-import { onRenderTracked, onRenderTriggered } from "vue";
+import { defineComponent, onRenderTracked, onRenderTriggered } from "vue";
 
-onRenderTracked((e) => {
-  console.log(e);
-  debugger;
-});
+export default defineComponent({
+  name: "App",
+  components: {
+    ConfigProvider,
+    DisplayModeControl,
+  },
+  setup: () => {
+    onRenderTracked((e) => {
+      console.log(e);
+      debugger;
+    });
 
-onRenderTriggered(() => {
-  debugger;
+    onRenderTriggered(() => {
+      debugger;
+    });
+  },
 });
 </script>
 
@@ -39,6 +48,9 @@ onRenderTriggered(() => {
                 <router-link class="nav__link" to="/toggle">Toggle</router-link>
                 <router-link class="nav__link" to="/blog">Blog</router-link>
                 <router-link class="nav__link" to="/about">About</router-link>
+                <router-link class="nav__link" to="/tutorials"
+                  >Tutorials</router-link
+                >
               </div>
 
               <div class="hidden sm:flex sm:items-center">
@@ -105,15 +117,3 @@ onRenderTriggered(() => {
     </main>
   </ConfigProvider>
 </template>
-
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

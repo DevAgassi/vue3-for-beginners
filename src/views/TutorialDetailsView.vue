@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container pt-5">
     <suspense>
       <template #default>
-        <UserName />
+        <tutorial-details />
       </template>
       <template #fallback> Loading ... </template>
     </suspense>
@@ -11,12 +11,10 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import UserName from "@/components/user-name";
+import TutorialDetails from "@/components/tutorial/TutorialDetails";
 
 export default defineComponent({
-  name: "UserView",
-  components: {
-    UserName,
-  },
+  name: "TutorialDetailsView",
+  components: { TutorialDetails },
 });
 </script>
